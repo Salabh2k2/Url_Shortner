@@ -5,6 +5,7 @@
  const URL = require("./models/url")
  const path = require("path")
  const staticRoute = require("./routes/staticRouter")
+ const userRoute = require('./routes/user')
  const PORT = 8001
  app.use(express.urlencoded({extended:true}))
  app.set("view engine", "ejs")
@@ -17,6 +18,7 @@
  app.use(express.json())
  app.use("/url", urlRoute)
   app.use("/", staticRoute)
+  app.use("/user",userRoute)
 
   
 
